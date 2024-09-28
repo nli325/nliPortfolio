@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Norah L.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-text-box">
+            <h1>Contact</h1>
+        </div>
+    </section>
+
+    <!-- Social Media Links -->
+    <section class="social-media">
+        <div class="social-media-icons">
+            <a href="https://www.instagram.com/youraccount" target="_blank">
+                <img src="/images/instagram.webp" alt="Instagram">
+            </a>
+            <a href="https://www.twitter.com/youraccount" target="_blank">
+                <img src="/images/linkedin.webp" alt="Twitter">
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form">
+        <form action="/send-email" method="POST">
+            <div class="input-group">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
+            <div class="captcha-group">
+                <label for="captcha">10 + 14 = </label>
+                <input type="text" id="captcha" name="captcha" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </section>
+</body>
+</html>
