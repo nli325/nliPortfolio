@@ -1,110 +1,143 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Courier New', Courier, monospace;
-    color: #fff;
-    background-color: #000;
-    background-image: url('Stars.svg'); /* Add a starry background */
-    background-size: cover;
-    background-position: center;
-  }
-  
-  header {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-  }
-  
-  .logo {
-    font-size: 24px;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
-  
-  .main-content {
-    text-align: center;
-    padding: 50px 20px;
-    min-height: 80vh;
-  }
-  
-  .welcome-section h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-  }
-  
-  .welcome-section p {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
-  .logo-container {
-    margin: 50px auto;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .rotating-logo {
-    width: 250px;
-    animation: spin 10s linear infinite;
-  }
-  
-  /* Rotating animation */
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  footer {
-    background-color: #222;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 10px;
-  }
-  
-  .footer-links a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .footer-links a:hover {
-    text-decoration: underline;
-  }
-  
-  footer p {
-    font-size: 14px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  background-color: #000;
+  background-image: url('Stars.svg');
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* Logo and Welcome Section Side by Side */
+/* Center Logo Before Interaction */
+.logo-welcome-container {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: 100vh; /* Full viewport height */
+  position: relative; /* Needed for absolute positioning */
+}
+
+.logo-container {
+  flex: 0 0 50%; /* Logo takes up 40% of the space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.animated-logo {
+  width: 100%;
+  max-width: 800px; /* Set the max size */
+  position: relative; /* Allows precise centering */
+  top: 90%; /* Move logo down by half the viewport height */
+  transform: translate(-50%, -50%); /* Center it using transform */
+  cursor: pointer; /* Indicates interactivity */
+  transition: all 1.5s ease; /* Smooth transitions */
+  z-index: 1;
+}
+
+.welcome-section {
+  flex: 1; /* Text takes up the remaining space */
+  text-align: left;
+  margin-left: 15px;
+  z-index: 2;
+}
+
+.welcome-section h1,
+.welcome-section p {
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-150px); /* Slide in from the left */
+  margin-left: 15px;
+  transition: all 1.5s ease;
+  z-index: 2;
+}
+
+.welcome-section h1 {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 28px;
+  line-height: 1.6;
+}
+
+
+/* Footer */
+footer {
+  background-color: #222;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  font-size: 14px;
+}
+
   
 
   /* Projects Section Styles */
@@ -132,39 +165,93 @@
     font-family: 'Courier New', Courier, monospace;
   }
   
-  .project-cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 50px;
-  }
-  
-  .project-card {
-    width: 300px;
-    height: 400px;
-    background: linear-gradient(145deg, #443355, #221144);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.8);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
-  }
-  
-  /* Typography for Cards */
-  .project-card h2 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
+ /* General styles for the card container */
+.project-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+  perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.project-card {
+  width: 300px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+/* Card inner wrapper for handling the flip */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+/* Card front side */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back when flipped */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front {
+  background-size: contain; /* Change from 'cover' to 'contain' */
+  background-repeat: no-repeat; /* Prevent image from repeating */
+  background-position: center;
+  border-radius: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card-back {
+  background-image: url('card.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  transform: rotateY(180deg); /* Initially hide the back */
+  padding: 20px;
+}
+
+.card-back h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-back ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.card-back a {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px black;
+}
+
+.card-back a:hover {
+  text-decoration: underline;
+}
+
+
   
   /* Responsive Design */
   @media (max-width: 768px) {
@@ -229,6 +316,7 @@
 
   /* Contact Page Specific Styles */
 .contact-section {
+    height: 100vh;
     text-align: center;
     padding: 50px 20px;
     min-height: 80vh;

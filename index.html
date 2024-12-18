@@ -7,12 +7,16 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Header Navigation -->
   <header>
     <div class="header-container">
-      <h1 class="logo">NORAH NATION</h1>
+      <h1 class="logo">
+        <a href="index.html" style="text-decoration: none; color: inherit;">NORAH NATION</a>
+      </h1>
       <nav>
         <ul class="nav-links">
-        <li><a href="projects.html">Projects</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -20,24 +24,31 @@
     </div>
   </header>
 
-  <main class="main-content">
-    <section class="welcome-section">
-      <h1>Welcome</h1>
-      <p>
-        Hello! My name is Norah Li <br />
-        I am a second-year Computational Media student attending Georgia Tech! <br />
-        Welcome to my portfolio, a world of technology and art looking towards the future.
-      </p>
-    </section>
-    <div class="logo-container">
-      <img src="Logo.svg" alt="Rotating Logo" class="rotating-logo">
-    </div>
-  </main>
+  <!-- Logo and Welcome Section Container -->
+<section class="logo-welcome-container">
+  <!-- Welcome Section -->
+  <div class="welcome-section">
+    <h1 class="hidden-left" id="welcome-title">Welcome</h1>
+    <p class="hidden-left" id="welcome-text">
+      Hello! My name is Norah Li <br />
+      I am a second-year Computational Media student attending Georgia Tech!
+      Welcome to my portfolio, a world of technology and art looking towards the future.
+    </p>
+  </div>
 
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="logoAnime.gif" alt="Rotating Logo" class="animated-logo" id="logo">
+  </div>
+
+</section>
+
+
+  <!-- Footer -->
   <footer>
     <div class="footer-links">
-      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-      <a href="mailto:example@example.com">Email</a>
+      <a href="https://www.linkedin.com/in/norahli/" target="_blank">LinkedIn</a>
+      <a href="mailto:norahjadeli@gmail.com">Email</a>
       <a href="https://instagram.com" target="_blank">Instagram</a>
     </div>
     <p>© Norah Nation 2024</p>
